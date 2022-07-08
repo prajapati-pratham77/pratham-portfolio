@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'profile/profile.dart';
 
@@ -12,11 +13,39 @@ class HomePageMain extends StatefulWidget {
 
 class _HomePageState extends State<HomePageMain> {
   int currentPos = 0;
-  int _page = 0;
+
   GlobalKey<_HomePageState> _bottomNavigationKey = GlobalKey();
+  int _selectedIndex = 0;
+  late List<Widget> _pages;
+  late Widget _page1;
+  late Widget _page2;
+  late Widget _page3;
+  late int _currentIndex;
+  late Widget _currentPage;
+
+  @override
+  void initState() {
+    super.initState();
+    _page1 = const HomePageMain();
+
+    _currentIndex = 0;
+    _currentPage = _page1;
+  }
+
+  void _changeTab(int index) {
+    setState(() {
+      _currentIndex = index;
+      _currentPage = _pages[index];
+    });
+  }
+
+  void _onItemTapped(int index) {
+    _selectedIndex = index;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -32,6 +61,7 @@ class _HomePageState extends State<HomePageMain> {
             ListTile(
               leading: Icon(
                 Icons.home,
+                color: Colors.black,
               ),
               title: const Text('Page 1'),
               onTap: () {
@@ -51,21 +81,31 @@ class _HomePageState extends State<HomePageMain> {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade800,
+        backgroundColor: Color.fromRGBO(104, 108, 109, 255),
         elevation: 0.0,
         title: Text(""),
+        iconTheme: IconThemeData(color: Colors.black),
         actions: <Widget>[
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.favorite_border_rounded),
+            icon: Icon(
+              Icons.favorite_border_rounded,
+              color: Colors.black,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_bag_sharp),
+            icon: Icon(
+              Icons.shopping_bag_sharp,
+              color: Colors.black,
+            ),
           ),
         ],
       ),
@@ -79,62 +119,58 @@ class _HomePageState extends State<HomePageMain> {
           },
           child: Icon(
             Icons.shopping_bag_outlined,
-            size: 35,
+            size: 40,
           ), //icon inside button
         ),
 
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: SizedBox(
-          height: 50,
-          child: BottomAppBar(
-            color: Colors.grey,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(
-                    Icons.home_filled,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePageMain()));
-                  },
+        bottomNavigationBar: Container(
+          margin: EdgeInsets.only(),
+          height: 60,
+          child: BottomNavigationBar(
+            onTap: (index) {
+              _changeTab(index);
+            },
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            type: BottomNavigationBarType.fixed,
+            elevation: 0,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  size: 30,
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.notifications,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-                  onPressed: () {},
+                label: 'Calls',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.notification_add_outlined,
+                  size: 30,
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.favorite_border,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-                  onPressed: () {},
+                label: 'Camera',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.favorite_border_outlined,
+                  size: 30,
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyProfile()));
-                  },
+                label: 'Chats',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  size: 30,
                 ),
-              ],
-            ),
+                label: 'Chats',
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.blue[800],
+            unselectedItemColor: Colors.black,
           ),
         ),
+
         //floating action button position to center
 
         body: Container(
@@ -328,89 +364,73 @@ class _HomePageState extends State<HomePageMain> {
                   )
                 ],
               ),
-              CarouselSlider(
-                items: [
-                  //1st Image of Slider
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://img.freepik.com/free-photo/portrait-handsome-smiling-young-man-model-wearing-casual-summer-pink-clothes-fashion-stylish-man-posing-round-sunglasses_158538-5346.jpg?t=st=1656065894~exp=1656066494~hmac=36d16877c4649289ab679238288afa99173a5b471640d05e660f012a56779a48"),
-                        fit: BoxFit.cover,
+              Column(
+                children: [
+                  CarouselSlider(
+                    items: [
+                      //1st Image of Slider
+                      Container(
+                        margin: EdgeInsets.all(6.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://img.freepik.com/free-photo/portrait-handsome-smiling-young-man-model-wearing-casual-summer-pink-clothes-fashion-stylish-man-posing-round-sunglasses_158538-5346.jpg?t=st=1656065894~exp=1656066494~hmac=36d16877c4649289ab679238288afa99173a5b471640d05e660f012a56779a48"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
 
-                  //2nd Image of Slider
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://img.freepik.com/free-photo/man-wearing-t-shirt-gesturing_23-2149393638.jpg?t=st=1656065894~exp=1656066494~hmac=7d088f88d8b5e401216eece1afe0fd80ee438f05daade89744ede95c6847bc3e&w=740"),
-                        fit: BoxFit.cover,
+                      //2nd Image of Slider
+                      Container(
+                        margin: EdgeInsets.all(6.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://img.freepik.com/free-photo/man-wearing-t-shirt-gesturing_23-2149393638.jpg?t=st=1656065894~exp=1656066494~hmac=7d088f88d8b5e401216eece1afe0fd80ee438f05daade89744ede95c6847bc3e&w=740"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
 
-                  //3rd Image of Slider
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://img.freepik.com/free-photo/smiling-student-woman-with-backpack-camera-going-vacation_149155-4472.jpg?w=826"),
-                        fit: BoxFit.cover,
+                      //3rd Image of Slider
+                      Container(
+                        margin: EdgeInsets.all(6.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://img.freepik.com/free-photo/smiling-student-woman-with-backpack-camera-going-vacation_149155-4472.jpg?w=826"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
 
-                  //4th Image of Slider
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://img.freepik.com/free-photo/group-beautiful-girls-boys-pastel-wall_155003-10579.jpg?t=st=1656063577~exp=1656064177~hmac=b04ba8603deb90ff50fb232bb28961ab2b4f23b42606b6d9307e7408aff58757&w=360"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
+                      //4th Image of Slider
 
-                  //5th Image of Slider
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://img.freepik.com/free-photo/smiley-little-girl-red-dress_23-2148984786.jpg?t=st=1656063577~exp=1656064177~hmac=fd2340a8c4a17765af1900853fbe31610cceb078d4a64f7c3f150f21e53fba36"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                      //5th Image of Slider
+                    ],
+
+                    //Slider Container properties
+                    options: CarouselOptions(
+                        height: 250.0,
+                        enlargeCenterPage: true,
+                        autoPlay: true,
+                        aspectRatio: 16 / 9,
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        enableInfiniteScroll: true,
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        viewportFraction: 1.0,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            currentPos = index;
+                          });
+                        }),
                   ),
+                  SizedBox(height: 10),
+                  buildIndicator(),
                 ],
-
-                //Slider Container properties
-                options: CarouselOptions(
-                    height: 250.0,
-                    enlargeCenterPage: true,
-                    autoPlay: true,
-                    aspectRatio: 16 / 9,
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    enableInfiniteScroll: true,
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    viewportFraction: 1.0,
-                    onPageChanged: (index, reason) {
-                      setState(() {
-                        currentPos = index;
-                      });
-                    }),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -420,7 +440,7 @@ class _HomePageState extends State<HomePageMain> {
                       flex: 1,
                       fit: FlexFit.tight,
                       child: Container(
-                        height: 180,
+                        height: 160,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(70),
@@ -441,7 +461,7 @@ class _HomePageState extends State<HomePageMain> {
                       flex: 1,
                       fit: FlexFit.tight,
                       child: Container(
-                          height: 180,
+                          height: 160,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(70),
@@ -461,7 +481,7 @@ class _HomePageState extends State<HomePageMain> {
                       flex: 1,
                       fit: FlexFit.tight,
                       child: Container(
-                          height: 180,
+                          height: 160,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(70),
@@ -684,4 +704,13 @@ class _HomePageState extends State<HomePageMain> {
       ),
     );
   }
+
+  Widget buildIndicator() => AnimatedSmoothIndicator(
+      activeIndex: currentPos,
+      count: 3,
+      effect: JumpingDotEffect(
+        dotWidth: 5,
+        dotHeight: 5,
+        dotColor: Colors.grey,
+      ));
 }

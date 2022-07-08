@@ -32,7 +32,7 @@ class _MyProfileState extends State<MyProfile> {
                         horizontal: 10, vertical: 10),
                     child: Text(
                       "Hola,Jessica",
-                      style: TextStyle(fontSize: 35),
+                      style: TextStyle(fontSize: 30),
                     ),
                   ),
                   Divider(

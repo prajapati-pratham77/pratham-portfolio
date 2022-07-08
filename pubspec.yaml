@@ -39,6 +39,8 @@ dependencies:
   fluttertoast: ^8.0.9
   sign_button: ^2.0.2
   email_validator: ^2.0.1
+  carousel_indicator: ^1.0.6
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
