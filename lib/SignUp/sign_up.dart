@@ -1,3 +1,4 @@
+import 'package:coduzion_demo/CUSTOM_WIDGETS/String_api.dart';
 import 'package:coduzion_demo/HomePage.dart';
 import 'package:coduzion_demo/LOGIN/login.dart';
 import 'package:coduzion_demo/mainpage.dart';
@@ -77,7 +78,7 @@ class _DemoSignUpState extends State<DemoSignUp> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 20),
                       child: Text(
-                        "SIGN UP",
+                        StringData.signup,
                         style: GoogleFonts.lora(
                             fontSize: 40, fontWeight: FontWeight.bold),
                       ),
@@ -284,7 +285,7 @@ class _DemoSignUpState extends State<DemoSignUp> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Text(
-                        "Already have an account?",
+                        StringData.already_account,
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 16.5,
@@ -306,7 +307,7 @@ class _DemoSignUpState extends State<DemoSignUp> {
                                     builder: (context) => LoginUi()));
                           },
                           child: Text(
-                            "Login",
+                            StringData.login,
                             style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.blue,

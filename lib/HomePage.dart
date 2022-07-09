@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:coduzion_demo/CUSTOM_WIDGETS/String_api.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -15,32 +16,17 @@ class _HomePageState extends State<HomePageMain> {
   int currentPos = 0;
 
   GlobalKey<_HomePageState> _bottomNavigationKey = GlobalKey();
-  int _selectedIndex = 0;
-  late List<Widget> _pages;
-  late Widget _page1;
-  late Widget _page2;
-  late Widget _page3;
-  late int _currentIndex;
-  late Widget _currentPage;
 
   @override
   void initState() {
     super.initState();
-    _page1 = const HomePageMain();
-
-    _currentIndex = 0;
-    _currentPage = _page1;
   }
 
   void _changeTab(int index) {
-    setState(() {
-      _currentIndex = index;
-      _currentPage = _pages[index];
-    });
+    setState(() {});
   }
 
   void _onItemTapped(int index) {
-    _selectedIndex = index;
     setState(() {});
   }
 
@@ -165,7 +151,6 @@ class _HomePageState extends State<HomePageMain> {
                 label: 'Chats',
               ),
             ],
-            currentIndex: _selectedIndex,
             selectedItemColor: Colors.blue[800],
             unselectedItemColor: Colors.black,
           ),
@@ -259,7 +244,7 @@ class _HomePageState extends State<HomePageMain> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 55),
                     child: Text(
-                      "YOU SNOOZE , YOU LOSE",
+                      StringData.snooz_losse,
                       style: TextStyle(
                         fontSize: 20,
                       ),
@@ -355,7 +340,7 @@ class _HomePageState extends State<HomePageMain> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 110),
                     child: Text(
-                      "FEATURED BRAND",
+                      StringData.future_brand,
                       style: TextStyle(
                         fontSize: 20,
                       ),
@@ -609,7 +594,7 @@ class _HomePageState extends State<HomePageMain> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 120),
                     child: Text(
-                      "BUY MY COLOR",
+                      StringData.buy_my_color,
                       style: TextStyle(
                         fontSize: 20,
                       ),

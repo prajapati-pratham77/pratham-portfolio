@@ -6,8 +6,10 @@ class StringData {
       "Please login or sign up to \ continue using our app";
   static const String enter_socialnetwork = "Enter Via Social Network";
   static const String login_email = "Login with via email";
-
-  static const String snooze_loose = "snooze_loose";
-  static const String feature_brand = "feature_brand";
-  static const String sponsor_top_brands = "sponsor_top_brands";
+  static const String signup = "Sign Up";
+  static const String login = "Login";
+  static const String already_account = "Already have an account?";
+  static const String snooz_losse = "YOU SNOOZE , YOU LOSE";
+  static const String future_brand = "FEATURED BRAND";
+  static const String buy_my_color = "BUY MY COLOR";
 }
