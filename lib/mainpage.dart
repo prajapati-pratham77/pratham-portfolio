@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:coduzion_demo/CUSTOM_WIDGETS/String_api.dart';
 import 'package:coduzion_demo/LOGIN/login.dart';
 import 'package:coduzion_demo/SignUp/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class _SignUpState extends State<SignUp> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 30),
                     child: Text(
-                      "Welcome to indoinq!",
+                      StringData.app_name,
                       style: GoogleFonts.lato(
                           color: Colors.black,
                           fontSize: 25,
@@ -46,7 +47,7 @@ class _SignUpState extends State<SignUp> {
                     horizontal: 30,
                   ),
                   child: Text(
-                    "Please login or sign up to \ continue using our app",
+                    StringData.login_signup,
                     style: GoogleFonts.lato(color: Colors.grey, fontSize: 16),
                   ),
                 ),
@@ -61,7 +62,7 @@ class _SignUpState extends State<SignUp> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Enter Via Social Network",
+                      StringData.enter_socialnetwork,
                       style: GoogleFonts.lato(color: Colors.blue, fontSize: 20),
                       textAlign: TextAlign.center,
                     ),
@@ -102,7 +103,7 @@ class _SignUpState extends State<SignUp> {
               ),
               Container(
                   child: Center(
-                child: Text("Login with via email",
+                child: Text(StringData.login_email,
                     style: GoogleFonts.poppins(fontSize: 20)),
               )),
               Container(
