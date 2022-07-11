@@ -1,3 +1,4 @@
+import 'package:coduzion_demo/CUSTOM_WIDGETS/String_api.dart';
 import 'package:coduzion_demo/Forgot%20Password/forgot_passsword.dart';
 import 'package:coduzion_demo/HomePage.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,7 @@ class _LoginUiState extends State<LoginUi> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Text(
-                  "Login",
+                  StringData.login,
                   style: GoogleFonts.domine(
                       fontSize: 30, fontWeight: FontWeight.bold),
                 ),
@@ -91,7 +92,7 @@ class _LoginUiState extends State<LoginUi> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Enter Via Social Network",
+                StringData.enter_socialnetwork,
                 style: GoogleFonts.lato(color: Colors.blue, fontSize: 20),
                 textAlign: TextAlign.center,
               ),
@@ -195,7 +196,7 @@ class _LoginUiState extends State<LoginUi> {
                       builder: (context) => ForgorPassword()));
                 },
                 child: Text(
-                  "forgot password?",
+                  StringData.forgot_passsword,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.blue,

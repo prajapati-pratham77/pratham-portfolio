@@ -1,3 +1,4 @@
+import 'package:coduzion_demo/CUSTOM_WIDGETS/String_api.dart';
 import 'package:coduzion_demo/LOGIN/login.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +59,7 @@ class _ForgorPassword extends State<ForgorPassword> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 20),
                     child: Text(
-                      "FORGOT PASSWORD",
+                      StringData.forgot_pass_capi,
                       style: GoogleFonts.domine(
                           fontSize: 30, fontWeight: FontWeight.bold),
                     ),
@@ -70,7 +71,7 @@ class _ForgorPassword extends State<ForgorPassword> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
-                  "enter the register emial to below to receive",
+                  "enter the register email to below to receive",
                   textAlign: TextAlign.justify,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontSize: 17.0),
@@ -147,7 +148,7 @@ class _ForgorPassword extends State<ForgorPassword> {
                       MaterialPageRoute(builder: (context) => LoginUi()));
                 },
                 child: Text(
-                  "Back to Login",
+                  StringData.back_to_login,
                   style: TextStyle(
                       fontSize: 18,
                       color: Colors.blue,

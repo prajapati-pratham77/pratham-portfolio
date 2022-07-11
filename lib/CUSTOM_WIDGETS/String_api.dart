@@ -12,4 +12,7 @@ class StringData {
   static const String snooz_losse = "YOU SNOOZE , YOU LOSE";
   static const String future_brand = "FEATURED BRAND";
   static const String buy_my_color = "BUY MY COLOR";
+  static const String forgot_passsword = "forgot password?";
+  static const String forgot_pass_capi = "FORGOT PASSWORD";
+  static const String back_to_login = "Back to Login";
 }
