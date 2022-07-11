@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:coduzion_demo/CUSTOM_WIDGETS/font_api.dart';
 import 'package:coduzion_demo/HomePage.dart';
 import 'package:coduzion_demo/LOGIN/login.dart';
 import 'package:email_validator/email_validator.dart';
@@ -82,8 +83,7 @@ class _SignUpState extends State<SignUpService> {
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Text(
                 "SIGN UP",
-                style:
-                    GoogleFonts.lora(fontSize: 40, fontWeight: FontWeight.bold),
+                style: FONT_CONST.MEDIUM,
               ),
             )
           ],
