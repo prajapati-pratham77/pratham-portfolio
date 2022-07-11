@@ -23,101 +23,27 @@ class _HomePageState extends State<HomePageMain> {
     super.initState();
   }
 
-  void _changeTab(int index) {
-    setState(() {});
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.home,
-                color: Colors.black,
-              ),
-              title: const Text('Page 1'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.train,
-              ),
-              title: const Text('Page 2'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(104, 108, 109, 255),
-        elevation: 0.0,
-        title: Text(""),
-        iconTheme: IconThemeData(color: Colors.black),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.favorite_border_rounded,
-              color: Colors.black,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.shopping_bag_sharp,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
-      body: Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.indigo[900],
 
           //Floating action button on Scaffold
           onPressed: () {
-            //code to execute on button press
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => MyProfile()));
           },
           child: Icon(
             Icons.shopping_bag_outlined,
             size: 40,
           ), //icon inside button
         ),
-
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(),
           height: 60,
           child: BottomNavigationBar(
-            onTap: (index) {
-              _changeTab(index);
-            },
             showSelectedLabels: false,
             showUnselectedLabels: false,
             type: BottomNavigationBarType.fixed,
@@ -155,6 +81,68 @@ class _HomePageState extends State<HomePageMain> {
             selectedItemColor: Colors.blue[800],
             unselectedItemColor: Colors.black,
           ),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text('Drawer Header'),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
+                title: const Text('Page 1'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.train,
+                ),
+                title: const Text('Page 2'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(104, 108, 109, 255),
+          elevation: 0.0,
+          title: Text(""),
+          iconTheme: IconThemeData(color: Colors.black),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.favorite_border_rounded,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.shopping_bag_sharp,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
 
         //floating action button position to center
@@ -658,9 +646,7 @@ class _HomePageState extends State<HomePageMain> {
               ),
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   Widget buildIndicator() => AnimatedSmoothIndicator(

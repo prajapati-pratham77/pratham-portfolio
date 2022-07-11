@@ -1,4 +1,6 @@
 import 'package:coduzion_demo/CUSTOM_WIDGETS/String_api.dart';
+import 'package:coduzion_demo/CUSTOM_WIDGETS/color_constant.dart';
+import 'package:coduzion_demo/CUSTOM_WIDGETS/font_api.dart';
 import 'package:coduzion_demo/HomePage.dart';
 import 'package:coduzion_demo/LOGIN/login.dart';
 import 'package:coduzion_demo/mainpage.dart';
@@ -80,7 +82,9 @@ class _DemoSignUpState extends State<DemoSignUp> {
                       child: Text(
                         StringData.signup,
                         style: GoogleFonts.lora(
-                            fontSize: 40, fontWeight: FontWeight.bold),
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: COLOR_CONST.PRIMARY_COLOR),
                       ),
                     )
                   ],
@@ -286,10 +290,7 @@ class _DemoSignUpState extends State<DemoSignUp> {
                       ),
                       child: Text(
                         StringData.already_account,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16.5,
-                            fontWeight: FontWeight.bold),
+                        style: FONT_CONST.LUAM_BOLD_DARK_TEXT_16,
                       ),
                     ),
                     Padding(

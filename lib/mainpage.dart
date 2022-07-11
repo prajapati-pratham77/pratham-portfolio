@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:coduzion_demo/CUSTOM_WIDGETS/String_api.dart';
+import 'package:coduzion_demo/CUSTOM_WIDGETS/color_constant.dart';
 import 'package:coduzion_demo/LOGIN/login.dart';
 import 'package:coduzion_demo/SignUp/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -34,8 +35,8 @@ class _SignUpState extends State<SignUp> {
                     child: Text(
                       StringData.app_name,
                       style: GoogleFonts.lato(
-                          color: Colors.black,
-                          fontSize: 25,
+                          color: COLOR_CONST.PRIMARY_COLOR,
+                          fontSize: 28,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
