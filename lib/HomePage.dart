@@ -97,6 +97,7 @@ class _HomePageState extends State<HomePageMain> {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.indigo[900],
 
+         
           onPressed: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => MyProfile()));
