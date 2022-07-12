@@ -54,28 +54,28 @@ class _HomePageState extends State<HomePageMain> {
                   Icons.home,
                   size: 30,
                 ),
-                label: 'Calls',
+                label: 'HOME',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.notification_add_outlined,
                   size: 30,
                 ),
-                label: 'Camera',
+                label: 'NOTIFICATION',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.favorite_border_outlined,
                   size: 30,
                 ),
-                label: 'Chats',
+                label: 'WISHLIST',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.person,
                   size: 30,
                 ),
-                label: 'Chats',
+                label: 'PROFILE',
               ),
             ],
             selectedItemColor: Colors.blue[800],
