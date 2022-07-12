@@ -31,8 +31,8 @@ class _HomePageState extends State<HomePageMain> {
 
           //Floating action button on Scaffold
           onPressed: () {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => MyProfile()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MyProfile()));
           },
           child: Icon(
             Icons.shopping_bag_outlined,
@@ -164,6 +164,9 @@ class _HomePageState extends State<HomePageMain> {
                             radius: 40,
                           ),
                         ),
+                      ),
+                      Row(
+                        children: [Text("p")],
                       ),
                       Padding(
                         padding: const EdgeInsets.all(2.0),

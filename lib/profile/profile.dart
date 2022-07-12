@@ -1,3 +1,5 @@
+import 'package:coduzion_demo/CUSTOM_WIDGETS/color_constant.dart';
+import 'package:coduzion_demo/CUSTOM_WIDGETS/font_api.dart';
 import 'package:flutter/material.dart';
 
 class MyProfile extends StatefulWidget {
@@ -12,6 +14,7 @@ class _MyProfileState extends State<MyProfile> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          
             extendBodyBehindAppBar: true,
             appBar: AppBar(
               title: Text(
@@ -20,23 +23,21 @@ class _MyProfileState extends State<MyProfile> {
               ),
               elevation: 0,
               iconTheme: IconThemeData(color: Colors.black),
-              backgroundColor: Color(0x44000000),
+              backgroundColor: Color.fromRGBO(104, 108, 109, 255),
             ),
-            body: Container(
-              width: double.infinity,
-              height: double.infinity,
+            body: SafeArea(
               child: ListView(
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 10),
+                        horizontal: 20, vertical: 10),
                     child: Text(
                       "Hola,Jessica",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(
+                          fontSize: 30, color: COLOR_CONST.PRIMARY_COLOR),
                     ),
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   Padding(
@@ -47,7 +48,7 @@ class _MyProfileState extends State<MyProfile> {
                           maxRadius: 40,
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(7.0),
                           child: Text(
                             '(91)333999333\njessica.siman@gmail.com',
                             style: TextStyle(fontSize: 18),
@@ -57,14 +58,24 @@ class _MyProfileState extends State<MyProfile> {
                     ),
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   ListTile(
-                    leading: Icon(
-                      Icons.shopping_cart_checkout,
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey.shade200,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.shopping_cart,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    trailing: Icon(Icons.arrow_forward, size: 35),
+                    trailing: Icon(Icons.arrow_forward_ios, size: 25),
                     title: const Text(
                       'My Order',
                       style: TextStyle(fontSize: 19),
@@ -72,14 +83,24 @@ class _MyProfileState extends State<MyProfile> {
                     onTap: () {},
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   ListTile(
-                    leading: Icon(
-                      Icons.favorite,
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey.shade200,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.favorite_border,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    trailing: Icon(Icons.arrow_forward, size: 35),
+                    trailing: Icon(Icons.arrow_forward_ios, size: 25),
                     title: const Text(
                       'Whishlist',
                       style: TextStyle(fontSize: 19),
@@ -87,14 +108,24 @@ class _MyProfileState extends State<MyProfile> {
                     onTap: () {},
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   ListTile(
-                    leading: Icon(
-                      Icons.loyalty,
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey.shade200,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.point_of_sale,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    trailing: Icon(Icons.arrow_forward, size: 35),
+                    trailing: Icon(Icons.arrow_forward_ios, size: 25),
                     title: const Text(
                       'My Loyality Points',
                       style: TextStyle(fontSize: 19),
@@ -102,12 +133,24 @@ class _MyProfileState extends State<MyProfile> {
                     onTap: () {},
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   ListTile(
-                    leading: Icon(Icons.location_on),
-                    trailing: Icon(Icons.arrow_forward, size: 35),
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey.shade200,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.location_on,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    trailing: Icon(Icons.arrow_forward_ios, size: 25),
                     title: const Text(
                       'My Addresses',
                       style: TextStyle(fontSize: 19),
@@ -115,14 +158,24 @@ class _MyProfileState extends State<MyProfile> {
                     onTap: () {},
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   ListTile(
-                    leading: Icon(
-                      Icons.star,
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey.shade200,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.star,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    trailing: Icon(Icons.arrow_forward, size: 35),
+                    trailing: Icon(Icons.arrow_forward_ios, size: 25),
                     title: const Text(
                       'My Product Review',
                       style: TextStyle(fontSize: 19),
@@ -130,14 +183,24 @@ class _MyProfileState extends State<MyProfile> {
                     onTap: () {},
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   ListTile(
-                    leading: Icon(
-                      Icons.shopping_cart_checkout,
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey.shade200,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.download,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    trailing: Icon(Icons.arrow_forward, size: 35),
+                    trailing: Icon(Icons.arrow_forward_ios, size: 25),
                     title: const Text(
                       'My Downloadable Products',
                       style: TextStyle(fontSize: 19),
@@ -145,7 +208,6 @@ class _MyProfileState extends State<MyProfile> {
                     onTap: () {},
                   ),
                   Divider(
-                    thickness: 1,
                     color: Colors.black,
                   ),
                   Container(
