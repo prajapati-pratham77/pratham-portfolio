@@ -15,7 +15,7 @@ class HomePageMain extends StatefulWidget {
 
 class _HomePageState extends State<HomePageMain> {
   int currentPos = 0;
-
+  int _selectedIndex = 0;
   GlobalKey<_HomePageState> _bottomNavigationKey = GlobalKey();
 
   @override
@@ -23,64 +23,43 @@ class _HomePageState extends State<HomePageMain> {
     super.initState();
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.indigo[900],
-
-          //Floating action button on Scaffold
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MyProfile()));
-          },
-          child: Icon(
-            Icons.shopping_bag_outlined,
-            size: 40,
-          ), //icon inside button
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: Container(
-          margin: EdgeInsets.only(),
-          height: 60,
-          child: BottomNavigationBar(
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            type: BottomNavigationBarType.fixed,
-            elevation: 0,
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  size: 30,
-                ),
-                label: 'HOME',
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(104, 108, 109, 255),
+          elevation: 0.0,
+          title: Text(""),
+          iconTheme: IconThemeData(color: Colors.black),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+                color: Colors.black,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.notification_add_outlined,
-                  size: 30,
-                ),
-                label: 'NOTIFICATION',
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.favorite_border_rounded,
+                color: Colors.black,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.favorite_border_outlined,
-                  size: 30,
-                ),
-                label: 'WISHLIST',
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.shopping_bag_sharp,
+                color: Colors.black,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person,
-                  size: 30,
-                ),
-                label: 'PROFILE',
-              ),
-            ],
-            selectedItemColor: Colors.blue[800],
-            unselectedItemColor: Colors.black,
-          ),
+            ),
+          ],
         ),
         drawer: Drawer(
           child: ListView(
@@ -115,34 +94,62 @@ class _HomePageState extends State<HomePageMain> {
             ],
           ),
         ),
-        appBar: AppBar(
-          backgroundColor: Color.fromRGBO(104, 108, 109, 255),
-          elevation: 0.0,
-          title: Text(""),
-          iconTheme: IconThemeData(color: Colors.black),
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                color: Colors.black,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.indigo[900],
+
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MyProfile()));
+          },
+          child: Icon(
+            Icons.shopping_bag_outlined,
+            size: 40,
+          ), //icon inside button
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: Container(
+          margin: EdgeInsets.only(),
+          height: 60,
+          child: BottomNavigationBar(
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            elevation: 0,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  size: 30,
+                ),
+                label: 'HOME',
               ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.favorite_border_rounded,
-                color: Colors.black,
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.notification_add_outlined,
+                  size: 30,
+                ),
+                label: 'NOTIFICATION',
               ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.shopping_bag_sharp,
-                color: Colors.black,
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.favorite_border_outlined,
+                  size: 30,
+                ),
+                label: 'WISHLIST',
               ),
-            ),
-          ],
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  size: 30,
+                ),
+                label: 'PROFILE',
+              ),
+            ],
+            type: BottomNavigationBarType.fixed,
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+            selectedItemColor: Colors.indigo[900],
+            unselectedItemColor: Colors.black,
+          ),
         ),
 
         //floating action button position to center
@@ -155,42 +162,42 @@ class _HomePageState extends State<HomePageMain> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Container(
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(imeges.IMG_TAB_1),
-                            radius: 40,
+                    children: <Widget>[
+                      GestureDetector(
+                        child: Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Container(
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(imeges.IMG_TAB_1),
+                              radius: 40,
+                            ),
                           ),
                         ),
-                      ),
-                      Row(
-                        children: [Text("p")],
+                        onTap: () {},
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           backgroundImage: NetworkImage(imeges.IMG_TAB_2),
                           radius: 40,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           backgroundImage: NetworkImage(imeges.IMG_TAB_3),
                           radius: 40,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           backgroundImage: NetworkImage(imeges.IMG_TAB_4),
                           radius: 40,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           backgroundImage: NetworkImage(imeges.IMG_TAB_5),
                           radius: 40,
