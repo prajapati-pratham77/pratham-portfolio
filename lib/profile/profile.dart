@@ -27,9 +27,7 @@ class _MyProfileState extends State<MyProfile> {
                   backgroundColor: Colors.grey.shade200,
                   radius: 20,
                   child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+                    onPressed: () {},
                     icon: Icon(
                       Icons.arrow_back,
                       color: Colors.black,
@@ -48,7 +46,9 @@ class _MyProfileState extends State<MyProfile> {
                     child: Text(
                       "Hola,Jessica",
                       style: TextStyle(
-                          fontSize: 30, color: COLOR_CONST.PRIMARY_COLOR),
+                        fontSize: 30,
+                        color: COLOR_CONST.PRIMARY_COLOR,
+                      ),
                     ),
                   ),
                   Divider(
