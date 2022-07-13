@@ -14,7 +14,6 @@ class _MyProfileState extends State<MyProfile> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          
             extendBodyBehindAppBar: true,
             appBar: AppBar(
               title: Text(
@@ -29,8 +28,8 @@ class _MyProfileState extends State<MyProfile> {
               child: ListView(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                     child: Text(
                       "Hola,Jessica",
                       style: TextStyle(
