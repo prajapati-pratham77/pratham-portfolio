@@ -121,46 +121,88 @@ class _HomePageState extends State<HomePageMain> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
         margin: EdgeInsets.only(),
-        height: 60,
+        height: 70,
         child: BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                size: 30,
-              ),
+              icon: (_selectedIndex == 0)
+                  ? CircleAvatar(
+                      radius: 20,
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.indigo[900],
+                      child: Icon(
+                        Icons.home,
+                        size: 30,
+                      ),
+                    )
+                  : Icon(
+                      Icons.home_outlined,
+                      color: Colors.black,
+                      size: 40,
+                    ),
               label: 'HOME',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.notification_add_outlined,
-                size: 30,
-              ),
+              icon: (_selectedIndex == 1)
+                  ? CircleAvatar(
+                      radius: 20,
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.indigo[900],
+                      child: Icon(
+                        Icons.notification_add_outlined,
+                        size: 30,
+                      ),
+                    )
+                  : Icon(
+                      Icons.notification_add_outlined,
+                      color: Colors.black,
+                      size: 40,
+                    ),
               label: 'NOTIFICATION',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite_border_outlined,
-                size: 30,
-              ),
+              icon: (_selectedIndex == 2)
+                  ? CircleAvatar(
+                      radius: 20,
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.indigo[900],
+                      child: Icon(
+                        Icons.favorite_border_outlined,
+                        size: 30,
+                      ),
+                    )
+                  : Icon(
+                      Icons.favorite_border_outlined,
+                      size: 40,
+                      color: Colors.black,
+                    ),
               label: 'WISHLIST',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                size: 30,
-              ),
+              icon: (_selectedIndex == 3)
+                  ? CircleAvatar(
+                      radius: 20,
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.indigo[900],
+                      child: Icon(
+                        Icons.person,
+                        size: 30,
+                      ),
+                    )
+                  : Icon(
+                      Icons.people_outlined,
+                      color: Colors.black,
+                      size: 40,
+                    ),
               label: 'PROFILE',
             ),
           ],
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
-          selectedItemColor: Colors.indigo[900],
-          unselectedItemColor: Colors.black,
         ),
       ),
 
