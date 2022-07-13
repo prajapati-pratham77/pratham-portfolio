@@ -42,35 +42,37 @@ class _HomePageState extends State<HomePageMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(104, 108, 109, 255),
-        elevation: 0.0,
-        title: Text(""),
-        iconTheme: IconThemeData(color: Colors.black),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.favorite_border_rounded,
-              color: Colors.black,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.shopping_bag_sharp,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
+      appBar: (_selectedIndex == 0)
+          ? AppBar(
+              backgroundColor: Color.fromRGBO(104, 108, 109, 255),
+              elevation: 0.0,
+              title: Text(""),
+              iconTheme: IconThemeData(color: Colors.black),
+              actions: <Widget>[
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite_border_rounded,
+                    color: Colors.black,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.shopping_bag_sharp,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            )
+          : null,
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.

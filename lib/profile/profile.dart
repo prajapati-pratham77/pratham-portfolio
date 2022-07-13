@@ -21,15 +21,28 @@ class _MyProfileState extends State<MyProfile> {
                 style: TextStyle(color: Colors.black),
               ),
               elevation: 0,
-              iconTheme: IconThemeData(color: Colors.black),
+              leading: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey.shade200,
+                  radius: 20,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
               backgroundColor: Color.fromRGBO(104, 108, 109, 255),
             ),
             body: SafeArea(
               child: ListView(
                 children: <Widget>[
                   Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
                     child: Text(
                       "Hola,Jessica",
                       style: TextStyle(
