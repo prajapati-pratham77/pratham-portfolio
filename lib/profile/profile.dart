@@ -27,7 +27,9 @@ class _MyProfileState extends State<MyProfile> {
                   backgroundColor: Colors.grey.shade200,
                   radius: 20,
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: Icon(
                       Icons.arrow_back,
                       color: Colors.black,

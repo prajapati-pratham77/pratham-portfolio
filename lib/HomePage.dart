@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePageMain> {
                       foregroundColor: Colors.white,
                       backgroundColor: Colors.indigo[900],
                       child: Icon(
-                        Icons.notification_add_outlined,
+                        Icons.notification_add,
                         size: 30,
                       ),
                     )
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePageMain> {
                       foregroundColor: Colors.white,
                       backgroundColor: Colors.indigo[900],
                       child: Icon(
-                        Icons.favorite_border_outlined,
+                        Icons.favorite,
                         size: 30,
                       ),
                     )
@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePageMain> {
                       ),
                     )
                   : Icon(
-                      Icons.people_outlined,
+                      Icons.person_outlined,
                       color: Colors.black,
                       size: 40,
                     ),
