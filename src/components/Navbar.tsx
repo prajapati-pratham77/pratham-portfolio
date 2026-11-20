@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { PERSONAL_INFO } from "@/data/portfolioData";
+import { PERSONAL_INFO, PHOTO_SRC } from "@/data/portfolioData";
 import { Menu, X, ArrowUpRight, Terminal, Sparkles, Download } from "lucide-react";
 
 export default function Navbar() {
@@ -67,7 +67,7 @@ export default function Navbar() {
             }}
           >
             <Image
-              src="/pratham.jpg"
+              src={PHOTO_SRC}
               alt="Pratham Prajapati"
               fill
               sizes="42px"

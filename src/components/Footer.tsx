@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { PERSONAL_INFO } from "@/data/portfolioData";
+import { PERSONAL_INFO, PHOTO_SRC } from "@/data/portfolioData";
 import { Heart, Smartphone, ArrowUpRight, MessageCircle, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -42,7 +42,7 @@ export default function Footer() {
                 }}
               >
                 <Image
-                  src="/pratham.jpg"
+                  src={PHOTO_SRC}
                   alt="Pratham Prajapati"
                   fill
                   sizes="38px"

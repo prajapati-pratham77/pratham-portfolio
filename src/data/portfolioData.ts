@@ -1,10 +1,13 @@
 import { Project, Experience, SkillCategory } from "@/types/portfolio";
 
+// Static assets need the base path when hosted on a GitHub Pages project URL.
+export const PHOTO_SRC = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/pratham.jpg`;
+
 export const PERSONAL_INFO = {
   name: "Pratham Prajapati",
   role: "Flutter Developer & AI Integrator",
   subRole: "Crafting High-Performance Mobile Apps, Real-Time WebSockets & Next-Gen Voice AI",
-  email: "pathu6990@gmail.com",
+  email: "pratham.flutter@gmail.com",
   phone: "+91 9054484449",
   location: "Ahmedabad, Gujarat, India",
   address: "54/B Vrundavan Society, College Road, Dehgam, Gandhinagar, Gujarat 382305",
@@ -646,7 +649,7 @@ export const TERMINAL_COMMANDS: Record<string, string | string[]> = {
   ],
   contact: [
     "Direct Reach:",
-    "  • Email:    pathu6990@gmail.com",
+    "  • Email:    pratham.flutter@gmail.com",
     "  • WhatsApp: +91 9054484449 (wa.me/919054484449)",
     "  • Location: Ahmedabad, Gujarat, India",
     "Type 'hire' to see why we should work together!",
@@ -657,11 +660,11 @@ export const TERMINAL_COMMANDS: Record<string, string | string[]> = {
     "  2. Real-Time WebSocket Mastery: Zero-lag instant messaging, live sync, and connection resilience.",
     "  3. Monetization Pro: Experience architecting In-App Purchases and subscription lifecycles.",
     "  4. AI Forward: Actively engineering voice agents and natural language intent workflows.",
-    "Ready to build? Send an email to pathu6990@gmail.com!",
+    "Ready to build? Send an email to pratham.flutter@gmail.com!",
   ],
   "cat resume": [
     "PRATHAM PRAJAPATI | Flutter Developer",
-    "Phone: +91 9054484449 | Email: pathu6990@gmail.com | Ahmedabad, Gujarat",
+    "Phone: +91 9054484449 | Email: pratham.flutter@gmail.com | Ahmedabad, Gujarat",
     "BCA - Information Technology, Dharamsinh Desai University",
     "3+ years experience, 20+ apps shipped, Saturncube Technology, Achyut Labs, Torbit Multisoft.",
     "Expertise: Flutter, Dart, Bloc, Riverpod, WebSockets, Firebase, IAP, Geofencing, AI Voice Agents.",
